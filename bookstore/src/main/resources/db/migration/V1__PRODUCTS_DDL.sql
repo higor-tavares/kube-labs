@@ -1,0 +1,10 @@
+CREATE SEQUENCE IF NOT EXISTS product_id_seq START WITH 1;
+
+CREATE TABLE IF NOT EXISTS products (
+    id BIGINT NOT NULL DEFAULT NEXTVAL('product_id_seq'),
+    name VARCHAR(45) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    price INT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT (NOW()),
+    PRIMARY KEY (id)
+);
